@@ -4,6 +4,14 @@ A complete modernization of [fcalri.com](https://fcalri.com), originally built o
 
 **Live:** https://btizzy.github.io/fcalri-site/
 
+## ⚖️ License
+
+**Source code** (HTML, CSS, JavaScript, PHP templates, theme structure) is licensed under the **GNU Affero General Public License v3.0** — see [LICENSE](./LICENSE). Anyone forking or deploying a modified version must publish their changes under the same license (AGPL §13 covers network deployment).
+
+**Photographs** in `/images/` and `/wordpress-theme/assets/images/` are **NOT** covered by the AGPL. They are the property of **East Bay Community Development Corp. (EBCDC)**, the operator of Franklin Court, and are used with permission solely to present the Franklin Court website. They may not be reused in other projects without EBCDC's written consent.
+
+Contact: ryan@trilliumhiring.com
+
 ---
 
 ## What's in here
