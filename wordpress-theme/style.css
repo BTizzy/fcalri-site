@@ -1,0 +1,95 @@
+/*
+Theme Name: Franklin Court Assisted Living
+Theme URI: https://github.com/BTizzy/fcalri-site
+Author: Trillium Hiring · Ryan Bartell
+Author URI: https://trilliumhiring.com/
+Description: Custom WordPress theme for Franklin Court Assisted Living — Bristol RI. Built for the EBCDC migration off Wix.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GPL-2.0-or-later
+Text Domain: fcalri
+Tags: senior-living, accessibility-ready, custom-colors, custom-menu
+*/
+
+/* ==========================================================================
+   Franklin Court Assisted Living — WordPress Theme Overrides
+   The full design system lives in /assets/css/main.css and is enqueued
+   from functions.php. This file only contains the WP-required theme header
+   plus a tiny set of WordPress-specific tweaks that should NOT change the
+   static design.
+   ========================================================================== */
+
+/* Make sure WP's admin bar doesn't overlap the sticky header when present. */
+.admin-bar .site-header { top: 32px; }
+@media screen and (max-width: 782px) {
+  .admin-bar .site-header { top: 46px; }
+}
+
+/* WP image alignment helpers (used by posts) */
+.alignleft   { float: left;  margin: 0 var(--sp-3) var(--sp-3) 0; }
+.alignright  { float: right; margin: 0 0 var(--sp-3) var(--sp-3); }
+.aligncenter { display: block; margin: 0 auto var(--sp-3); }
+.alignwide   { max-width: var(--container-wide); margin-left: auto; margin-right: auto; }
+.alignfull   { max-width: 100%; width: 100%; }
+
+/* WP caption shortcode */
+.wp-caption { max-width: 100%; }
+.wp-caption-text { font-size: var(--fs-xs); color: var(--c-slate); text-align: center; padding-top: 0.5em; }
+
+/* Screen-reader text — kept identical to WP's stock .screen-reader-text */
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-text-clip {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  word-wrap: normal !important;
+  border: 0;
+}
+.screen-reader-text:focus,
+.screen-reader-text span:focus,
+.screen-reader-text-clip:focus {
+  display: block !important;
+  clip: auto !important;
+  clip-path: none;
+  height: auto;
+  width: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  background: var(--c-ink);
+  color: var(--c-paper);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  z-index: 100000;
+}
+
+/* No-js fallback — script removes this on load; we keep things visible
+   if JS is disabled so the static site stays usable. */
+.no-js .reveal { opacity: 1; transform: none; }
+
+/* When WordPress paginates archive pages, give it some breathing room */
+.navigation.pagination,
+.pagination { margin: var(--sp-5) auto; text-align: center; }
+.nav-links .page-numbers {
+  display: inline-block;
+  padding: 0.5rem 0.875rem;
+  margin: 0 0.125rem;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-sm);
+  color: var(--c-ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-links .page-numbers.current {
+  background: var(--c-accent);
+  color: var(--c-white);
+  border-color: var(--c-accent);
+}

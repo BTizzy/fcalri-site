@@ -1,0 +1,21 @@
+# Build artifacts
+preview/
+recon/
+clone/
+research/
+build/
+design/
+theme/
+
+# Zip artifacts (rebuild from source)
+fcalri-theme.zip
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Python venv (used during build)
+__pycache__/
+*.pyc
