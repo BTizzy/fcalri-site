@@ -19,3 +19,4 @@ fcalri-theme.zip
 # Python venv (used during build)
 __pycache__/
 *.pyc
+build_images.py
