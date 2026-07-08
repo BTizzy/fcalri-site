@@ -199,16 +199,19 @@ section { padding: var(--sp-7) 0; }
   font-weight: 500;
   letter-spacing: -0.04em;
 }
-.brand-text { line-height: 1; }
+.brand-text { line-height: 1.2; }
 .brand-text small {
   display: block;
   font-family: var(--f-body);
   font-size: 0.625rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em; /* was 0.18em — reduced to limit tagline overflow at mid widths */
+  line-height: 1.4; /* prevent glyph clipping from line-height:1 */
   text-transform: uppercase;
   color: var(--c-slate);
   margin-top: 4px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 @media (max-width: 600px) {
   .brand-mark { width: 38px; height: 38px; font-size: 1.25rem; }
@@ -293,8 +296,6 @@ section { padding: var(--sp-7) 0; }
   font-size: 1.5rem;
   border-bottom: 1px solid var(--c-line-soft);
 }
-.mobile-menu-close { line-height: 1; }
-
 /* Topbar should hide earlier than 600px on truly small screens so the
    hero starts immediately below the nav without wasted vertical space. */
 @media (max-width: 720px) { .topbar { display: none; } }
@@ -325,12 +326,29 @@ section { padding: var(--sp-7) 0; }
 }
 .mobile-menu-close {
   align-self: flex-end;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
   background: transparent;
   border: 1px solid var(--c-line);
   border-radius: var(--r-sm);
   width: 44px;
+  min-width: 44px;
   height: 44px;
+  min-height: 44px;
+  padding: 0;
+  line-height: 1;
   font-size: 1.5rem;
+  color: var(--c-ink);
+  /* Keep outline visible even when parent uses overflow-y: auto */
+  overflow: visible;
+}
+/* Explicit keyboard focus indicator for drawer close (WCAG 2.4.7) */
+.mobile-menu-close:focus-visible {
+  outline: 3px solid var(--c-gold);
+  outline-offset: 3px;
+  border-color: var(--c-gold);
+  box-shadow: 0 0 0 1px var(--c-paper), 0 0 0 4px rgba(198, 150, 74, 0.35);
 }
 .mobile-menu ul { list-style: none; padding: 0; margin: var(--sp-4) 0; }
 .mobile-menu li { margin: var(--sp-3) 0; }
@@ -566,7 +584,15 @@ section { padding: var(--sp-7) 0; }
 }
 .card:hover .card-image img { transform: scale(1.04); }
 .card-body { padding: var(--sp-3); }
-.card-title { font-size: var(--fs-lg); margin-bottom: var(--sp-2); color: var(--c-ink); }
+.card-title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-2);
+  color: var(--c-ink);
+  /* Long unbroken labels (emails, phones) were clipping inside overflow:hidden cards */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
 .card-meta {
   font-family: var(--f-mono);
   font-size: 0.75rem;
@@ -574,6 +600,21 @@ section { padding: var(--sp-7) 0; }
   letter-spacing: 0.12em;
   color: var(--c-accent);
   margin-bottom: 4px;
+}
+/* Most popular — apartment card CTA marker (14px for senior a11y; was 12px) */
+.most-popular {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-accent);
+  background: rgba(168, 85, 58, 0.1);
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  line-height: 1.3;
+  max-width: 100%;
 }
 .card-text { color: var(--c-slate); font-size: 1rem; margin: 0; }
 
