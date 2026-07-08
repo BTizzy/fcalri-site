@@ -185,6 +185,7 @@ section { padding: var(--sp-7) 0; }
   letter-spacing: -0.02em;
   color: var(--c-ink);
   text-decoration: none;
+  min-height: 44px; /* WCAG 2.5.5 touch target */
 }
 .brand-mark {
   width: 44px;
@@ -368,7 +369,15 @@ section { padding: var(--sp-7) 0; }
   gap: var(--sp-3);
   flex-wrap: wrap;
 }
-.topbar a { color: var(--c-paper); font-weight: 600; text-decoration: none; }
+.topbar a {
+  color: var(--c-paper);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+}
 .topbar a:hover { color: var(--c-gold); }
 .topbar-meta {
   display: flex;
@@ -790,9 +799,22 @@ textarea { resize: vertical; min-height: 120px; }
   font-weight: 600;
 }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
-.footer-col li { margin-bottom: 6px; }
-.footer-col a { color: rgba(245, 239, 226, 0.7); text-decoration: none; }
+.footer-col li { margin-bottom: 2px; }
+.footer-col a {
+  color: rgba(245, 239, 226, 0.7);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* WCAG 2.5.5 — footer text links were ~20-25px tall */
+  padding: 8px 0;
+}
 .footer-col a:hover { color: var(--c-gold); }
+.footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 4px;
+}
 
 .footer-bottom {
   margin-top: var(--sp-5);
