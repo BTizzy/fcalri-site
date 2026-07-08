@@ -23,7 +23,7 @@
   --c-shadow:     rgba(20, 30, 40, 0.08);
 
   /* Typography */
-  --f-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --f-display: "Lora", "Playfair Display", Georgia, serif;
   --f-body:    "Source Sans 3", "Lato", -apple-system, BlinkMacSystemFont, sans-serif;
   --f-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
