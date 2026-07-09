@@ -445,6 +445,7 @@ section { padding: var(--sp-7) 0; }
   position: relative;
   background: var(--c-cream);
   overflow: hidden;
+  padding-top: var(--sp-5); /* halved from section's var(--sp-7) to halve space above hero header */
 }
 .hero-grid {
   display: grid;
@@ -456,7 +457,7 @@ section { padding: var(--sp-7) 0; }
   .hero-grid { grid-template-columns: 1.1fr 1fr; }
 }
 .hero-text {
-  padding: var(--sp-6) var(--sp-3);
+  padding: var(--sp-4) var(--sp-3) var(--sp-6); /* top halved from sp-6 to sp-4; bottom + sides kept */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -464,7 +465,7 @@ section { padding: var(--sp-7) 0; }
   margin: 0 auto;
 }
 @media (min-width: 900px) {
-  .hero-text { padding: var(--sp-8) var(--sp-5); margin: 0; max-width: none; }
+  .hero-text { padding: var(--sp-6) var(--sp-5) var(--sp-8); margin: 0; max-width: none; } /* top halved from sp-8 to sp-6; bottom + sides kept */
 }
 
 .eyebrow {
