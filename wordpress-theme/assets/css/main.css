@@ -441,7 +441,7 @@ section { padding: var(--sp-7) 0; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: var(--c-accent);
+  color: var(--c-ink);
   padding: 6px 14px;
   background: rgba(168, 85, 58, 0.08);
   border-radius: var(--r-pill);
